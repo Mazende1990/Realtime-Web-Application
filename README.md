@@ -1,12 +1,12 @@
 # Assignment B2 - Realtime Web Application
 
-In this assignment, you will write a web application that includes real-time web technologies such as WebSocket and webhook. You must put the application into production on a public server.
+In this assignment, you will write a web application that includes real-time web technologies such as WebSocket and Webhook. You must put the application into production on a public server.
 
 The idea behind the application is that you should be able to list [issues](https://docs.gitlab.com/ee/user/project/issues/) from a GitLab repository that you create yourself in the group "Assignment B2" (e.g., <https://gitlab.lnu.se/1dv026/student/xx222xx/assignment-b2/>). You have "manager" access to this group so that you can create projects and test the application by creating issues (and comments) and include these in your application through the [GitLab API](https://docs.gitlab.com/ee/api/api_resources.html) and [webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 The web application must be a Node.js application that uses Express as the application framework. You must follow the course's coding standard. You must split your source code into several modules. Of course, you need to document and comment on the source code. (#5, #1, #4)
 
-After cloning the repository with the application's source code and running `npm install`, it must be easy to lint the source code and run the application. Therefore, add the script start and lint to the "scripts" field in the package.json file. (#3)
+After cloning the repository with the application's source code and running the `npm install` command, it must be easy to lint the source code and run the application. Therefore, add the script start and lint to the "scripts" field in the package.json file. (#3)
 
 You must use the repository created for you and this assignment and make continuous commits to make it possible to follow the web application's creation. Make sure that no more files than necessary are committed to the repository. (#6)
 
@@ -14,7 +14,7 @@ To announce that you have completed the assignment, you must make a merge reques
 
 ## The web application
 
-<img src=".readme/application.png" width="80%" />
+<img src=".readme/application.png" width="80%" alt="application" />
 
 The image above explains the web application's architecture.
 
@@ -26,8 +26,8 @@ The image above explains the web application's architecture.
 
 When the application is running, the user must also be able to:
 
-* Close issues from the client-side application. (#14)
-* Do one more thing about the issues. You decide this yourself. (#14)
+- Close issues from the client-side application. (#14)
+- Do one more thing about the issues. You decide this yourself. (#14)
 
 You can choose and use third-party packages to solve the problem, but they should be mentioned and motivated in your assignment report and included in package.json.
 
@@ -45,13 +45,13 @@ When handing in the assignment, the assignment report must be answered. (#11)
 
 To solve the assignment, you may read the documentation at GitLab.
 
-* [GitLab, Issues API](https://docs.gitlab.com/ee/api/issues.html)
-* [GitLab, Webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
-* [GitLab, Webhook events, Issue events](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#issue-events)
+- [GitLab, Issues API](https://docs.gitlab.com/ee/api/issues.html)
+- [GitLab, Webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
+- [GitLab, Webhook events, Issue events](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#issue-events)
 
 ## Requirements
 
-Make sure to read [all requirements of the application](../../issues/). This includes: (#1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14)
-Pay extra attention to the labels indicating if the requirement is required (~"req::required") or optional (~"req::optional").
+Make sure to read [all the requirements of the application](../../issues/). This includes: (#1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14)
+Pay extra attention to the labels indicating if the requirement is required (`~"req::required"`) or optional (`~"req::optional"`).
 
 In this assignment, you are required to close issues and tasks ([ ]) that you implement. You must also create issues (and close them) for added functionality.
