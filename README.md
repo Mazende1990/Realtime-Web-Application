@@ -3,7 +3,7 @@
 In this assignment, you will write a web application that includes real-time web technologies such as WebSocket and Webhook. You must put the application into production on a public server.
 
 The idea behind the application is that you should be able to list [issues](https://docs.gitlab.com/ee/user/project/issues/) from a GitLab repository that you create yourself in the group "Assignment B2" (e.g., <https://gitlab.lnu.se/1dv026/student/xx222xx/assignment-b2/>). You have "manager" access to this group so that you can create projects and test the application by creating issues (and comments) and include these in your application through the [GitLab API](https://docs.gitlab.com/ee/api/api_resources.html) and [webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
-
+z
 The web application must be a Node.js application that uses Express as the application framework. You must follow the course's coding standard. You must split your source code into several modules. Of course, you need to document and comment on the source code. (#5, #1, #4)
 
 After cloning the repository with the application's source code and running the `npm install` command, it must be easy to lint the source code and run the application. Therefore, add the script start and lint to the "scripts" field in the package.json file. (#3)

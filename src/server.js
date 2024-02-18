@@ -13,7 +13,6 @@ import { router } from './routes/router.js'
 
 try {
   // Connect to MongoDB.
-  await connectToDatabase(process.env.DB_CONNECTION_STRING)
 
   // Creates an Express application.
   const app = express()
@@ -140,4 +139,3 @@ try {
   logger.error(err.message, { error: err })
   process.exitCode = 1
 }
-
