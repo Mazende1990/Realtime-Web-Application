@@ -7,9 +7,10 @@
 
 import express from 'express'
 import { HomeController } from '../controllers/HomeController.js'
+import { IssuesController } from '../controllers/IssuesController.js'
 
 export const router = express.Router()
 
-const controller = new HomeController()
+const controller = new IssuesController()
 
-router.get('/', (req, res, next) => controller.index(req, res, next))
+router.get('/', (req, res, next) => controller.fetchissues(req, res, next))

@@ -20,6 +20,7 @@
     "express-http-context": "^1.2.4",
     "express-session": "^1.18.0",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
     "socket.io": "^4.7.4",
     "winston": "^3.11.0",
     "winston-mongodb": "^5.1.1",

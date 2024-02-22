@@ -84,11 +84,11 @@ try {
 
   // Register routes.
   app.use('/', router)
-
+    /*
   // Error handler.
   app.use((err, req, res, next) => {
     logger.error(err.message, { error: err })
-
+    
     // 401 Unauthorized.
     if (err.status === 401) {
       res
@@ -117,12 +117,13 @@ try {
     // ⚠️ WARNING: Development Environment Only!
     //             Detailed error information is provided.
     // ---------------------------------------------------
-
+  
     // Render the error page.
     res
       .status(err.status || 500)
       .render('errors/error', { error: err })
   })
+  */
 
   // Starts the HTTP server listening for connections.
   const server = app.listen(process.env.PORT, () => {

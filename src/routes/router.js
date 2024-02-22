@@ -6,6 +6,7 @@ export const router = express.Router()
 
 router.use('/', homeRouter)
 
+/*
 // Catch 404 (ALWAYS keep this as the last route).
 router.use('*', (req, res, next) => {
   const statusCode = 404
@@ -13,3 +14,4 @@ router.use('*', (req, res, next) => {
   error.status = statusCode
   next(error)
 })
+*/
