@@ -14,14 +14,21 @@
             <% if (issue.state === 'opened') { %>
               <td>
                 <form action="/issues/<%= issue?.id %>/close" method="post">
-                    <input type="hidden" name="id" value="<%= issue?.id %>" />
-                    <button type="submit" class="button-close">Close</button>
-                  </form>
+                  <input type="hidden" name="id" value="<%= issue?.id %>" />
+                  <button type="submit" class="button-close">Close</button>
+                </form>
+              </td>
+            <% } else { %>
+              <td>
+                <form action="/issues/<%= issue?.id %>/open" method="post">
+                  <input type="hidden" name="id" value="<%= issue?.id %>" />
+                  <button type="submit" class="button-close">Open</button>
+                </form>
               </td>
             <% } %>
           </tr>
       <% } %>
   <% } else { %>
-      <tr><td colspan="4">No issues found.</td></tr>
+      <tr><td colspan="5">No issues found.</td></tr>
   <% } %>
 </table>

@@ -65,4 +65,33 @@ export class IssuesController {
     } catch (error) {
     }
   }
+
+  // eslint-disable-next-line jsdoc/require-description
+  /**
+   *
+   * @param {object} req - Express request object.
+   * @param {object} res - Express response object.
+   */
+  async openIssue (req, res) {
+    const issueId = req.params.id
+    const gitLabURL = `https://gitlab.lnu.se/api/v4/projects/40129/issues/${issueId}`
+
+    try {
+      const response = await fetch(gitLabURL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + process.env.ACCESS_TOKENS
+        },
+        body: JSON.stringify({
+          state_event: 'reopen'
+        })
+      })
+
+      const data = await response.json()
+      console.log('Issue opened:', data)
+      res.redirect('/issues')
+    } catch (error) {
+    }
+  }
 }
