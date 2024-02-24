@@ -1,16 +1,27 @@
 <h1>Issues</h1>
-<% if (issues?.length) { %>
-    <% for (const issue of issues) { %>
-        <tr>
-          <td><img src="<%= issue.avatar %>"></td>
-          <td><%= issue.title %></td>
-          <td>
-            <div class="issue-description">
-              <pre><%= issue.description || 'No description provided.' %></pre>
-            </div>
-          </td>
-        </tr>
-    <% } %>
-<% } else { %>
-    <p>No issues found.</p>
-<% } %>
+<table>
+  <% if (issues?.length) { %>
+      <% for (const issue of issues) { %>
+          <tr>
+            <td><img src="<%= issue.avatar %>" alt="Author's Avatar" style="width: 50px;"></td>
+            <td><%= issue.title %></td>
+            <td><%= issue.state %></td>
+            <td>
+              <div class="issue-description">
+                <pre><%= issue.description || 'No description provided.' %></pre>
+              </div>
+            </td>
+            <% if (issue.state === 'opened') { %>
+              <td>
+                <form action="/issues/<%= issue?.id %>/close" method="post">
+                    <input type="hidden" name="id" value="<%= issue?.id %>" />
+                    <button type="submit" class="button-close">Close</button>
+                  </form>
+              </td>
+            <% } %>
+          </tr>
+      <% } %>
+  <% } else { %>
+      <tr><td colspan="4">No issues found.</td></tr>
+  <% } %>
+</table>

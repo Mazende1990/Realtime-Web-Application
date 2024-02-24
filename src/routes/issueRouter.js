@@ -6,3 +6,5 @@ export const router = express.Router()
 const controller = new IssuesController()
 
 router.get('/', (req, res, next) => controller.fetchissues(req, res, next))
+
+router.post('/:id/close', (req, res, next) => controller.closeIssue(req, res, next))
