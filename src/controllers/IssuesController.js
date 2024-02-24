@@ -2,10 +2,11 @@
  *
  */
 export class IssuesController {
+  // eslint-disable-next-line jsdoc/require-description
   /**
    *
-   * @param req
-   * @param res
+   * @param {object} req - Express request object.
+   * @param {object} res - Express response object.
    */
   async fetchissues (req, res) {
     try {

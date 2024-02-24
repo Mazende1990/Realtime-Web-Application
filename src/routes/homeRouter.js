@@ -7,7 +7,6 @@
 
 import express from 'express'
 import { HomeController } from '../controllers/HomeController.js'
-import { IssuesController } from '../controllers/IssuesController.js'
 
 export const router = express.Router()
 

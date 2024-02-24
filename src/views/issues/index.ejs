@@ -1,0 +1,16 @@
+<h1>Issues</h1>
+<% if (issues?.length) { %>
+    <% for (const issue of issues) { %>
+        <tr>
+          <td><img src="<%= issue.avatar %>"></td>
+          <td><%= issue.title %></td>
+          <td>
+            <div class="issue-description">
+              <pre><%= issue.description || 'No description provided.' %></pre>
+            </div>
+          </td>
+        </tr>
+    <% } %>
+<% } else { %>
+    <p>No issues found.</p>
+<% } %>
