@@ -11,6 +11,6 @@ import { IssuesController } from '../controllers/IssuesController.js'
 
 export const router = express.Router()
 
-const controller = new IssuesController()
+const controller = new HomeController()
 
-router.get('/', (req, res, next) => controller.fetchissues(req, res, next))
+router.get('/', (req, res, next) => controller.index(req, res, next))
