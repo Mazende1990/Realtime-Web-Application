@@ -28,14 +28,14 @@
               <td>
                 <form class="issue-form" action="/issues/<%= issue?.id %>/close" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="submit-button" id="button-close">Close</button>
+                  <button type="submit" id="submit-button" class="button-close">Close</button>
                 </form>
               </td>
             <% } else { %>
               <td>
                 <form class="issue-form" action="/issues/<%= issue?.id %>/open" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="submit-button" id="button-open">Open</button>
+                  <button type="submit" id="submit-button" class="button-open">Open</button>
                 </form>
               </td>
             <% } %>

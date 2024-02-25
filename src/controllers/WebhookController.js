@@ -74,6 +74,8 @@ export class WebhookController {
         messageType = 'issues/update-state'
       } else if (req.object_attributes.action === 'open') {
         messageType = 'issues/create'
+      } else {
+        messageType = 'issues/update'
       }
 
       const data = JSON.stringify({

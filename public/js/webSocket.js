@@ -21,6 +21,8 @@ socket.addEventListener('message', (event) => {
     updateOpenCloseState(data)
   } else if ((type === 'issues/create')) {
     issueCreated(data)
+  } else if ((type === 'issues/update')) {
+    updateIssue(data)
   }
 })
 
@@ -31,11 +33,13 @@ socket.addEventListener('message', (event) => {
  */
 function updateOpenCloseState (issue) {
   const issueRow = document.querySelector(`tr[data-id="${issue.iid}"]`)
-  const button = issueRow.querySelector('.submit-button')
-
+  const button = issueRow.querySelector('#submit-button')
+  button.classList.remove('button-close', 'button-open')
   if (issue.state === 'closed') {
+    button.classList.add('button-open')
     button.textContent = 'Open'
   } else if (issue.state === 'opened') {
+    button.classList.add('button-close')
     button.textContent = 'Close'
   }
 }
@@ -53,7 +57,7 @@ function issueCreated (issue) {
   const state = issueNode.querySelector('.issue-state')
   const description = issueNode.querySelector('.issue-description pre')
   const issueRow = issueNode.querySelector('.issue-form')
-  const button = issueRow.querySelector('.submit-button')
+  const button = issueRow.querySelector('#submit-button')
 
   avatar.src = issue.avatar
   title.textContent = issue.title
@@ -69,4 +73,27 @@ function issueCreated (issue) {
   }
 
   issueList.appendChild(issueNode)
+}
+
+/**
+ * Docs.
+ *
+ * @param {object} issue - The received payload
+ */
+function updateIssue (issue) {
+  const issueRow = document.querySelector(`tr[data-id="${issue.iid}"]`)
+
+  if (issue.title !== undefined) {
+    const titleElement = issueRow.querySelector('.issue-title')
+    if (titleElement) {
+      titleElement.textContent = issue.title
+    }
+  }
+
+  if (issue.description !== undefined) {
+    const descriptionElement = issueRow.querySelector('.issue-description pre')
+    if (descriptionElement) {
+      descriptionElement.textContent = issue.description || 'No description provided.'
+    }
+  }
 }
