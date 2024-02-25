@@ -6,7 +6,7 @@
       <% for (const issue of issues) { %>
         <tbody id="issue-list">
           <tr  data-id="<%= issue.id %>">
-            <td><img src="<%= issue.avatar %>" alt="Author's Avatar" style="width: 50px;" class="issue-avatar"></td>
+            <td><img src="<%= issue.avatar %>" alt="Author's Avatar"  class="issue-avatar"></td>
             <td class="issue-title"><%= issue.title %></td>
             <td><%= issue.state %></td>
             <td>
@@ -18,14 +18,14 @@
               <td>
                 <form class="issue-form" action="/issues/<%= issue?.id %>/close" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="submit-button">Close</button>
+                  <button type="submit" class="submit-button" id="button-close">Close</button>
                 </form>
               </td>
             <% } else { %>
               <td>
                 <form class="issue-form" action="/issues/<%= issue?.id %>/open" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="submit-button" >Open</button>
+                  <button type="submit" class="submit-button" id="button-open">Open</button>
                 </form>
               </td>
             <% } %>

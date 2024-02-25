@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    font-size: 16px;
+  }
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+  }
+ 
+  .issue-avatar {
+    border-radius: 50%;
+    width: 50px;
+    filter: none;
+  }
+  
+  button {
+    padding: 8px 16px; 
+    border-radius: 5px;
+    color: white; 
+    border: none; 
+    cursor: pointer;
+
+  }
+  
+  #button-open {
+    background-color: #28a745; /* A more standard 'open' or 'success' green color */
+  }
+  
+  
+  #button-close {
+    background-color: #dc3545; /* A more standard 'close' or 'danger' red color */
+  }
+  
+ 
