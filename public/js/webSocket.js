@@ -52,10 +52,21 @@ function issueCreated (issue) {
   const title = issueNode.querySelector('.issue-title')
   const state = issueNode.querySelector('.issue-state')
   const description = issueNode.querySelector('.issue-description pre')
+  const issueRow = issueNode.querySelector('.issue-form')
+  const button = issueRow.querySelector('.submit-button')
 
   avatar.src = issue.avatar
   title.textContent = issue.title
   state.textContent = issue.state
   description.textContent = issue.description || 'No description provided.'
+
+  if (issue.state === 'closed') {
+    button.textContent = 'Open'
+    button.form.action = `/issues/${issue.iid}/open`
+  } else if (issue.state === 'opened') {
+    button.textContent = 'Close'
+    button.form.action = `/issues/${issue.iid}/close`
+  }
+
   issueList.appendChild(issueNode)
 }
