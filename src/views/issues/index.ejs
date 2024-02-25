@@ -1,8 +1,10 @@
+<script type="module" src="./js/webSocket.js"></script>
+
 <h1>Issues</h1>
 <table>
   <% if (issues?.length) { %>
       <% for (const issue of issues) { %>
-          <tr>
+          <tr data-id="<%= issue.id %>">
             <td><img src="<%= issue.avatar %>" alt="Author's Avatar" style="width: 50px;"></td>
             <td><%= issue.title %></td>
             <td><%= issue.state %></td>
@@ -13,16 +15,16 @@
             </td>
             <% if (issue.state === 'opened') { %>
               <td>
-                <form action="/issues/<%= issue?.id %>/close" method="post">
+                <form class="issue-form" action="/issues/<%= issue?.id %>/close" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="button-close">Close</button>
+                  <button type="submit" class="submit-button">Close</button>
                 </form>
               </td>
             <% } else { %>
               <td>
-                <form action="/issues/<%= issue?.id %>/open" method="post">
+                <form class="issue-form" action="/issues/<%= issue?.id %>/open" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" class="button-close">Open</button>
+                  <button type="submit" class="submit-button" >Open</button>
                 </form>
               </td>
             <% } %>
@@ -32,3 +34,17 @@
       <tr><td colspan="5">No issues found.</td></tr>
   <% } %>
 </table>
+
+<template id="issue-template">
+    <tr>
+      <td><img src="" alt="Author's Avatar" style="width: 50px;" class="issue-avatar"></td>
+      <td class="issue-title"></td>
+      <td class="issue-state"></td>
+      <td>
+        <div class="issue-description">
+          <pre></pre>
+        </div>
+      </td>
+      <td class="issue-action"></td>
+    </tr>
+  </template>

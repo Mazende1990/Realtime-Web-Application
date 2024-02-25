@@ -71,7 +71,7 @@ export class WebhookController {
       }
 
       const data = JSON.stringify({
-        type: 'issue',
+        type: 'issues/update',
         data: issue
       })
 
