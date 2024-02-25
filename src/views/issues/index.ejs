@@ -4,9 +4,10 @@
 <table>
   <% if (issues?.length) { %>
       <% for (const issue of issues) { %>
-          <tr data-id="<%= issue.id %>">
-            <td><img src="<%= issue.avatar %>" alt="Author's Avatar" style="width: 50px;"></td>
-            <td><%= issue.title %></td>
+        <tbody id="issue-list">
+          <tr  data-id="<%= issue.id %>">
+            <td><img src="<%= issue.avatar %>" alt="Author's Avatar" style="width: 50px;" class="issue-avatar"></td>
+            <td class="issue-title"><%= issue.title %></td>
             <td><%= issue.state %></td>
             <td>
               <div class="issue-description">
@@ -29,6 +30,7 @@
               </td>
             <% } %>
           </tr>
+        </tbody>
       <% } %>
   <% } else { %>
       <tr><td colspan="5">No issues found.</td></tr>
