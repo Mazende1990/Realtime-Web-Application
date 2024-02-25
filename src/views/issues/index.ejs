@@ -1,7 +1,17 @@
 <script type="module" src="./js/webSocket.js"></script>
 
 <h1>Issues</h1>
+
 <table>
+    <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
   <% if (issues?.length) { %>
       <% for (const issue of issues) { %>
         <tbody id="issue-list">

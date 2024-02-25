@@ -36,12 +36,12 @@ body {
   }
   
   #button-open {
-    background-color: #28a745; /* A more standard 'open' or 'success' green color */
+    background-color: #28a745; 
   }
   
   
   #button-close {
-    background-color: #dc3545; /* A more standard 'close' or 'danger' red color */
+    background-color: #dc3545; 
   }
   
  
