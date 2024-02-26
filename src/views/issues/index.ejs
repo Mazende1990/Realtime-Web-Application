@@ -18,7 +18,7 @@
           <tr  data-id="<%= issue.id %>">
             <td><img src="<%= issue.avatar %>" alt="Author's Avatar"  class="issue-avatar"></td>
             <td class="issue-title"><%= issue.title %></td>
-            <td><%= issue.state %></td>
+            <td class="issue-state"><%= issue.state %></td>
             <td>
               <div class="issue-description">
                 <pre><%= issue.description || 'No description provided.' %></pre>
@@ -26,16 +26,16 @@
             </td>
             <% if (issue.state === 'opened') { %>
               <td>
-                <form class="issue-form" action="/issues/<%= issue?.id %>/close" method="post">
+                <form class="issue-form" action="./issues/<%= issue?.id %>/close" method="post">
                   <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" id="submit-button" class="button-close">Close</button>
+                  <button type="submit" id="submit-button" class="button-close" value="<%= issue?.id %>">Close</button>
                 </form>
               </td>
             <% } else { %>
               <td>
-                <form class="issue-form" action="/issues/<%= issue?.id %>/open" method="post">
-                  <input type="hidden" name="id" value="<%= issue?.id %>" />
-                  <button type="submit" id="submit-button" class="button-open">Open</button>
+                <form class="issue-form" action="./issues/<%= issue?.id %>/open" method="post">
+                  <input type="hidden" name="id"  />
+                  <button type="submit" id="submit-button" class="button-open" value="<%= issue?.id %>">Open</button>
                 </form>
               </td>
             <% } %>
@@ -60,7 +60,7 @@
       <td class="issue-action">
         <form class="issue-form" action="" method="post">
             <input type="hidden" name="id" value="" class="issue-id" />
-            <button type="submit" class="submit-button"></button>
+            <button type="submit" id="submit-button"></button>
           </form>
       </td>
     </tr>
